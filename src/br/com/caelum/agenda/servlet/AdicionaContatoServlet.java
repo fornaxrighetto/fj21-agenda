@@ -15,8 +15,6 @@ import javax.servlet.http.HttpServletResponse;
 import br.com.caelum.agenda.dao.ContatoDao;
 import br.com.caelum.agenda.modelo.Contato;
 
-import com.sun.org.apache.xerces.internal.impl.xpath.regex.ParseException;
-
 //@WebServlet("/adicionaContato")
 public class AdicionaContatoServlet extends HttpServlet{
 	@Override
@@ -37,7 +35,7 @@ public class AdicionaContatoServlet extends HttpServlet{
 			Date date = new SimpleDateFormat("dd/MM/yyyy").parse(dataEmTexto);
 			dataNascimento = Calendar.getInstance();
 			dataNascimento.setTime(date);
-		}catch (ParseException | java.text.ParseException e){
+		}catch (java.text.ParseException e){
 			out.println("Erro de conversão da data");
 			return;
 		}
